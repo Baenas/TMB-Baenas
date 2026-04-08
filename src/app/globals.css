@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #E3001B; /* Rojo TMB Oficial */
+  --secondary: #005E8C; /* Azul Bus TMB */
+  --bg-gradient: #F5F7F8; /* Fondo claro oficial */
+  --text-main: #222222; /* Texto oscuro principal */
+  --text-muted: #666666; /* Texto secundario */
+  --glass-bg: #ffffff; /* Tarjetas blancas */
+  --glass-border: #E0E4E8; /* Bordes suaves grises */
+  --glass-glow: rgba(0, 0, 0, 0.05); /* Sombra estándar, no glow */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Header tipo oficial, banda blanca arriba con borde inferior sutil */
+.header {
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid var(--primary);
+  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: var(--text-main);
+  font-weight: 600;
+  text-transform: none;
+}
+
+/* Títulos más limpios, sin degradados */
+.dashboard-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  color: var(--text-main);
+  letter-spacing: -0.03em;
+}
+
+.dashboard-subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  text-align: left;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  line-height: 1.5;
+}
+
+/* Tarjetas planas, cuadradas/borde pequeño, sin efecto difuminado */
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px; /* Menos redondeado, más web corporativa */
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px var(--glass-glow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.glass-card:hover { /* Hover sutil oficial */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-color: #cccccc;
+}
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.info-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px; /* cuadrado */
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: #f0f0f0;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border: 1px solid #e0e0e0;
+}
+
+/* Botones como en apps de transporte */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #C40015; /* Rojo más oscuro al flotar */
+}
+
+/* Animación sutil de estado vivo (opcional, ahora minimalista) */
+.live-indicator {
+  width: 8px;
+  height: 8px;
+  background-color: #009900;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+/* Micro-animaciones desactivadas para sentir más corporativo */
+.pulse {
+  /* Retiramos el pulso para no ser ruidosos en diseño simple */
+}
+
+input {
+  transition: border-color 0.2s ease;
+}
+input:focus {
+  border-color: var(--primary) !important;
+}
